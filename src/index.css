@@ -1,13 +1,327 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+#scroll::-webkit-scrollbar
+{
+    display: none;
+}
+.scroll::-webkit-scrollbar
+{
+    display: none;
+}
+@media (min-width: 768px) and (max-width: 984px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width:768px) and (max-width: 960px) {
+  .item-container{
+    grid-template-columns: repeat(3,1fr) !important;
+  }
+}
+h1{
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  color: #323334;
+}
+h2
+{
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #323334;
+}
+p{
+  font-weight: 400;
+  font-size: 16px;
+  color: #323334;
+}
+button{
+  padding: 10px;
+  height: auto !important;
+  width: auto !important;
+}
+a{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px; 
+  color: #323334;
+}
+
+@media (min-width: 300px) and (max-width: 768px)
+{
+  h1{
+  font-family: "Roboto", sans-serif;
+  font-weight: 700 ; 
+  font-size: 20px ;
+  line-height: 100% ;
+  color: #323334 ;
+}
+h2{
+   font-family: "Roboto", sans-serif;
+  font-weight: 700 ;
+  font-size: 18px ;
+  line-height: 100% ;
+  color: #323334 ;
+}
+ p
+ {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700 ;
+  font-size: 16px ;
+  color: #323334 ;
+ }
+ a{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px; 
+  color: #323334;
+}
+button{
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
+  height: auto !important;
+  width: auto !important;
+  font-weight: 700;
+  font-size: 14px;
+}
+input{
+  font-family: "Roboto", sans-serif;
+}
+label{
+  font-family: "Roboto", sans-serif;
+}
+}
+@media (min-width: 1440px) and (max-width: 2560px)
+{
+  .discount{
+    width: 510px;
+  }
+}
+@media (min-width: 170px) and (max-width: 321px)
+{
+  .basket{
+    height: 164px;
+  }
+  .towel{
+    height: 164px;
+  }
+  .box{
+    height: 164px;
+  }
+  .glass{
+    height: 164px;
+  }
+  .plate{
+    height: 164px;
+  }
+  .bedsheet{
+    height: 209px!important;
+    width: 278px;
+  }
+  .jute{
+    height: 164px;
+  }
+  .samsung{
+    height: 164px;
+  }
+  .godrej{
+    height: 164px;
+  }
+  .handm{
+    height: 164px;
+  }
+  .prestige{
+    height: 164px;
+  }
+  .curlon{
+    height: 164px;
+  }
+  .vase{
+    height: 164px;
+  }
+  .tray{
+    height: 164px;
+  }
+  .cup{
+    height: 164px;
+  }
+  .chair{
+      height: 164px;
+  }
+}
+@media (min-width: 322px) and (max-width: 376px)
+{
+  .basket{
+    height: 207px;
+  }
+  .box{
+    height: 207px;
+  }
+  .towel{
+    height: 207px;
+  }
+  .glass{
+    height: 207px;
+  }
+  .plate{
+    height: 207px;
+  }
+  .bedsheet{
+    height: 244px!important;
+    width: 326px;
+  }
+  .jute{
+    height: 207px;
+  }
+  .samsung{
+    height: 207px;
+  }
+  .godrej{
+    height: 207px;
+  }
+  .handm{
+    height: 207px;
+  }
+  .prestige{
+    height: 207px;
+  }
+  .curlon{
+    height: 207px;
+  }
+  .vase{
+    height: 207px;
+  }
+  .tray{
+    height: 207px;
+  }
+  .cup{
+    height: 207px;
+  }
+  .chair{
+      height: 207px;
+  }
+}
+@media (min-width: 377px) and (max-width: 425px)
+{
+  .basket{
+    height: 246px;
+  }
+  .box{
+    height: 246px;
+  }
+  .towel{
+    height: 246px;
+  }
+  .glass{
+    height: 246px;
+  }
+  .plate{
+    height: 246px;
+  }
+  .bedsheet{
+    height: 277px!important;
+    width: 370px;
+  }
+  .jute{
+    height: 246px;
+  }
+  .samsung{
+    height: 246px;
+  }
+  .godrej{
+    height: 246px;
+  }
+  .handm{
+    height: 246px;
+  }
+  .prestige{
+    height: 246px;
+  }
+  .curlon{
+    height: 246px;
+  }
+  .vase{
+    height: 246px;
+  }
+  .tray{
+    height: 246px;
+  }
+  .cup{
+    height: 246px;
+  }
+  .chair{
+      height: 246px;
+  }
+}
+@media (min-width: 426px) and (max-width: 640px)
+{
+   .basket{
+    height: 300px;
+    width: 290px;
+  }
+  .box{
+    height: 300px;
+    width: 290px;
+  }
+  .towel{
+    height: 300px;
+    width: 290px;
+  }
+  .glass{
+    height: 300px;
+    width: 290px;
+  }
+  .plate{
+    height: 300px;
+    width: 290px;
+  }
+  .jute{
+    height: 300px;
+    width: 290px;
+  }
+  .samsung{
+    height: 300px;
+    width: 290px;
+  }
+  .godrej{
+    height: 300px;
+    width: 290px;
+  }
+  .handm{
+    height: 300px;
+    width: 290px;
+  }
+  .prestige{
+    height: 300px;
+    width: 290px;
+  }
+  .curlon{
+    height: 300px;
+    width: 290px;
+  }
+  .vase{
+    height: 300px;
+    width: 290px;
+  }
+  .tray{
+    height: 300px;
+    width: 290px;
+  }
+  .cup{
+    height: 300px;
+    width: 290px;
+  }
+  .chair{
+      height: 300px;
+      width: 290px;
+  }
 }
