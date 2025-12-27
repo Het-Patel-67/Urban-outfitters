@@ -4,19 +4,21 @@ import { Link } from "react-router-dom";
 
 export default function Profile() {
   const [user, setUser] = useState(null);
+  const [authMissing, setAuthMissing] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (!token) return alert("Please log in first");
+    if (!token) {
+      setAuthMissing(true);
+      return;
+    }
 
     axios
       .get("http://localhost:5000/profile", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setUser(res.data))
-      .catch((err) => alert("Unauthorized or expired token"));
-
-
+      .catch(() => setAuthMissing(true));
   }, []);
 
   const handleLogout = async () => {
@@ -37,7 +39,18 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-yellow-50">
-      {!user ? (
+      {authMissing ? (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-md text-center">
+            <h2 className="text-xl font-semibold mb-4">You must be logged in</h2>
+            <p className="text-gray-600 mb-6">Please log in or create an account to view your profile.</p>
+            <div className="flex justify-center gap-4">
+              <Link to="/Login" className="bg-blue-500 text-white px-4 py-2 rounded-lg">Login</Link>
+              <Link to="/Register" className="bg-green-500 text-white px-4 py-2 rounded-lg">Create Account</Link>
+            </div>
+          </div>
+        </div>
+      ) : !user ? (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
           <div className="loader border-4 border-gray-300 border-t-purple-500 w-12 h-12 rounded-full animate-spin"></div>
         </div>

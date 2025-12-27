@@ -1,6 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const  Product = require("./models/productmodel.js")// ✅ Destructure here
+const  Product = require("./models/productmodel.js")
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB connected"))
@@ -243,7 +243,7 @@ const products = [
 
 const importData = async () => {
   try {
-    console.log("Product model check:", typeof Product.deleteMany); // should be 'function'
+    console.log("Product model check:", typeof Product.deleteMany); 
     await Product.deleteMany();
     await Product.insertMany(products);
     console.log("✅ Product Data Imported Successfully!");

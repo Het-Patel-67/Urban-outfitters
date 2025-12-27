@@ -167,8 +167,9 @@ app.post('/cart',verifyToken, async (req, res) => {
 app.delete('/cart/:id',verifyToken, async (req,res) => {
     const itemId = req.params.id;
     try {
-        await Cart.findOneAndDelete({itemId, user: req.user.id,});
-        res.status(200).send('Item removed');
+    const deleted = await Cart.findOneAndDelete({ _id: itemId, user: req.user.id });
+    if (!deleted) return res.status(404).json({ message: 'Item not found or unauthorized' });
+    res.status(200).send('Item removed');
     } catch (err) {
         res.status(500).send('Server Error');
     }
